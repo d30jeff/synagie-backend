@@ -1,0 +1,66 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/web-api/src",
+  "monorepo": true,
+  "root": "apps/web-api",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/web-api/tsconfig.app.json"
+  },
+  "projects": {
+    "public-api": {
+      "type": "application",
+      "root": "apps/public-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/public-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/public-api/tsconfig.app.json"
+      }
+    },
+    "libs": {
+      "type": "library",
+      "root": "libs/libs",
+      "entryFile": "index",
+      "sourceRoot": "libs/libs/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/libs/tsconfig.lib.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "vietnam": {
+      "type": "application",
+      "root": "apps/vietnam",
+      "entryFile": "main",
+      "sourceRoot": "apps/vietnam/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/vietnam/tsconfig.app.json"
+      }
+    },
+    "malaysia": {
+      "type": "application",
+      "root": "apps/malaysia",
+      "entryFile": "main",
+      "sourceRoot": "apps/malaysia/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/malaysia/tsconfig.app.json"
+      }
+    },
+    "singapore": {
+      "type": "application",
+      "root": "apps/singapore",
+      "entryFile": "main",
+      "sourceRoot": "apps/singapore/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/singapore/tsconfig.app.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Database
+  singapore:
+    container_name: singapore_database
+    image: mariadb:10.5.8
+    restart: always
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_USER: db-user
+      MYSQL_PASSWORD: db-password
+      MYSQL_DATABASE: db-name
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    networks:
+      - synagie-backend-network
+
+  # Database
+  malaysia:
+    container_name: malaysia_database
+    image: mariadb:10.5.8
+    restart: always
+    ports:
+      - '3308:3306'
+    environment:
+      MYSQL_USER: db-user
+      MYSQL_PASSWORD: db-password
+      MYSQL_DATABASE: db-name
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    networks:
+      - synagie-backend-network
+
+  # # Redis
+  # redis:
+  #   container_name: synagie_redis
+  #   image: redis:5.0.6-alpine
+  #   ports:
+  #     - '6381:6379'
+  #   expose:
+  #     - '6381'
+  #   restart: always
+  #   networks:
+  #     - synagie-backend-network
+
+networks:
+  synagie-backend-network:
+    name: synagie

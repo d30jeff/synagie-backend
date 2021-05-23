@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # Admin API
+  admin-api:
+    container_name: starter-admin-api
+    build:
+      context: .
+      target: development
+      dockerfile: ./admin-api.Dockerfile
+    working_dir: /usr/src/app
+    networks:
+      - starter-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+
+networks:
+  starter-network:
+    name: starter
