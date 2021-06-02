@@ -23,7 +23,6 @@ import { knexSnakeCaseMappers } from 'objection';
             migrations: {
               tableName: 'knex_migrations',
             },
-            ...knexSnakeCaseMappers(),
           },
         };
       },
